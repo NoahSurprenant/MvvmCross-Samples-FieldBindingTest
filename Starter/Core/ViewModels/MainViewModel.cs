@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
+using MvvmCross.Plugin.FieldBinding;
 using MvvmCross.ViewModels;
 
 namespace Core.ViewModels;
@@ -18,6 +19,8 @@ public class MainViewModel : MvxViewModel
         set => SetProperty(ref _hello, value);
     }
 
+    public NC<string> Hello2 = new NC<string>("");
+
     public int Clicks
     {
         get => _clicks;
@@ -33,6 +36,7 @@ public class MainViewModel : MvxViewModel
 
     public MainViewModel(ILogger<MainViewModel> logger, IMvxNavigationService navigationService)
     {
+        Hello2.Value = _hello;
         _logger = logger;
         _navigationService = navigationService;
         ClickCommand = new MvxCommand(DoClick);

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:background="#eb0c29"
         android:id="@+id/hello_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -13,18 +14,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/hello_edit"
+        app:layout_constraintBottom_toTopOf="@+id/hello_edit2"
         app:MvxBind="Text Hello" />
+    <TextView
+        android:background="#2e9dff"
+        android:id="@+id/hello_text2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintTop_toBottomOf="@+id/hello_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/hello_edit"
+        app:MvxBind="Text Hello2" />
     <EditText
         android:id="@+id/hello_edit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Enter text"
-        app:layout_constraintTop_toBottomOf="@id/hello_text"
+        app:layout_constraintTop_toBottomOf="@id/hello_text2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/hello_edit2"
+        app:MvxBind="Text Hello" />
+    <EditText
+        android:id="@+id/hello_edit2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter text"
+        app:layout_constraintTop_toBottomOf="@id/hello_edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/click_button"
-        app:MvxBind="Text Hello" />
+        app:MvxBind="Text Hello2" />
     <Button
         android:id="@+id/click_button"
         android:layout_width="0dp"
